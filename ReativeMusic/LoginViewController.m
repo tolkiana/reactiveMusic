@@ -11,7 +11,7 @@
 #import <SafariServices/SafariServices.h>
 
 
-@interface LoginViewController ()
+@interface LoginViewController () <SFSafariViewControllerDelegate>
 
 @end
 
@@ -48,5 +48,25 @@
     }];
 }
 
+- (void)openLoginPage {
+    SPTAuth *auth = [SPTAuth defaultInstance];
+    UIViewController *authViewController = [self authViewControllerWithURL:[auth spotifyWebAuthenticationURL]];
+    self.definesPresentationContext = YES;
+    [self presentViewController:authViewController animated:YES completion:nil];
+
+}
+
+- (UIViewController *)authViewControllerWithURL:(NSURL *)url {
+    SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:url];
+    safari.delegate = self;
+    safari.modalPresentationStyle = UIModalPresentationPageSheet;
+    return safari;
+}
+
+#pragma mark - SFSafariViewControllerDelegate
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+    // User tapped the close button. Treat as auth error
+}
 
 @end
