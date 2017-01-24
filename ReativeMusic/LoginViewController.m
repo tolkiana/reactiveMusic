@@ -17,6 +17,21 @@
 
 @implementation LoginViewController
 
+#pragma mark - View life cycle
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self checkAuthenticationStatus];
+}
+
+#pragma mark - Authentication methods
+
+- (IBAction)login:(id)sender {
+    [self openLoginPage];
+}
+
+#pragma mark - Authentication methods
+
 - (void)checkAuthenticationStatus {
     SPTAuth *auth = [SPTAuth defaultInstance];
     
