@@ -28,6 +28,10 @@
 		4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAF41E3716B000E67DD4 /* LoginViewController.m */; };
 		4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFA1E37170100E67DD4 /* PlayViewController.m */; };
 		4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */; };
+		4B06DB001E3796AB00E67DD4 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */; };
+		4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B9156B91E37971500A208C5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; };
+		4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +52,12 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4B06DAED1E3700B400E67DD4 /* SpotifyMetadata.framework in Embed Frameworks */,
+				4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */,
 				4B06DAE01E36FFAF00E67DD4 /* AFNetworking.framework in Embed Frameworks */,
 				4B06DAEB1E3700B400E67DD4 /* SpotifyAuthentication.framework in Embed Frameworks */,
 				4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */,
 				4B06DAE91E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Embed Frameworks */,
+				4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +89,8 @@
 		4B06DAFA1E37170100E67DD4 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		4B9156B81E37971500A208C5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,8 @@
 				4B06DAF21E37040100E67DD4 /* SystemConfiguration.framework in Frameworks */,
 				4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */,
 				4B06DAEC1E3700B400E67DD4 /* SpotifyMetadata.framework in Frameworks */,
+				4B9156B91E37971500A208C5 /* Result.framework in Frameworks */,
+				4B06DB001E3796AB00E67DD4 /* ReactiveSwift.framework in Frameworks */,
 				4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */,
 				4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */,
 				4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */,
@@ -113,6 +123,8 @@
 		4B06DAAD1E36D87600E67DD4 = {
 			isa = PBXGroup;
 			children = (
+				4B9156B81E37971500A208C5 /* Result.framework */,
+				4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */,
 				4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */,
 				4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */,
 				4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */,
@@ -421,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -438,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -494,6 +508,7 @@
 				4B06DADA1E36D87600E67DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B06DADB1E36D87600E67DD4 /* Build configuration list for PBXNativeTarget "ReativeMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +517,7 @@
 				4B06DADD1E36D87600E67DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
