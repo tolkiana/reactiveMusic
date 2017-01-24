@@ -32,6 +32,7 @@
 		4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B9156B91E37971500A208C5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; };
 		4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9156BF1E37E57200A208C5 /* AuthenticationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		4B9156B81E37971500A208C5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		4B9156BE1E37E57200A208C5 /* AuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationService.h; sourceTree = "<group>"; };
+		4B9156BF1E37E57200A208C5 /* AuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,18 +145,15 @@
 		4B06DAB81E36D87600E67DD4 /* ReativeMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4B9156BD1E37E55100A208C5 /* Services */,
+				4B9156BC1E37E53800A208C5 /* Storyboards */,
+				4B9156BB1E37E52500A208C5 /* ViewControllers */,
 				4B06DABC1E36D87600E67DD4 /* AppDelegate.h */,
 				4B06DABD1E36D87600E67DD4 /* AppDelegate.m */,
 				4B06DAC21E36D87600E67DD4 /* Main.storyboard */,
 				4B06DAC51E36D87600E67DD4 /* Assets.xcassets */,
 				4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */,
 				4B06DACA1E36D87600E67DD4 /* Info.plist */,
-				4B06DAF31E3716B000E67DD4 /* LoginViewController.h */,
-				4B06DAF41E3716B000E67DD4 /* LoginViewController.m */,
-				4B06DAF91E37170100E67DD4 /* PlayViewController.h */,
-				4B06DAFA1E37170100E67DD4 /* PlayViewController.m */,
-				4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */,
-				4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */,
 				4B06DAB91E36D87600E67DD4 /* Supporting Files */,
 			);
 			path = ReativeMusic;
@@ -190,6 +190,35 @@
 				4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B9156BB1E37E52500A208C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B06DAF31E3716B000E67DD4 /* LoginViewController.h */,
+				4B06DAF41E3716B000E67DD4 /* LoginViewController.m */,
+				4B06DAF91E37170100E67DD4 /* PlayViewController.h */,
+				4B06DAFA1E37170100E67DD4 /* PlayViewController.m */,
+				4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */,
+				4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B9156BC1E37E53800A208C5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4B9156BD1E37E55100A208C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4B9156BE1E37E57200A208C5 /* AuthenticationService.h */,
+				4B9156BF1E37E57200A208C5 /* AuthenticationService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */,
+				4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */,
 				4B06DABE1E36D87600E67DD4 /* AppDelegate.m in Sources */,
 				4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */,
 				4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */,
