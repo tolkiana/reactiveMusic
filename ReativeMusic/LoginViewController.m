@@ -20,6 +20,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self checkAuthenticationStatus];
+    [AuthenticationService subscribeObserverForStartSessionSucces:self andSelector:@selector(sessionStartedNotification:)];
+    [AuthenticationService subscribeObserverForRefreshTokenSucces:self andSelector:@selector(tokenRefreshedNotification:)];
 }
 
 #pragma mark - Authentication methods
@@ -35,7 +37,7 @@
         case AuthenticationStatusNoSession:
             break;
         case AuthenticationStatusTokenExpired:
-            [AuthenticationService renewTokenWithCompletion:^(NSError *error) {}];
+            [AuthenticationService refreshToken];
             break;
         case AuthenticationStatusValidSession:
             break;
@@ -50,5 +52,16 @@
                        animated:YES
                      completion:nil];
 }
+
+#pragma mark - Authentication notifications
+
+- (void)sessionStartedNotification:(NSNotification *)notification {
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tokenRefreshedNotification:(NSNotification *)notification {
+    
+}
+
 
 @end

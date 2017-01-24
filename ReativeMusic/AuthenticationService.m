@@ -15,6 +15,11 @@ static NSString * const kClientID = @"9c2c7d32399747ff9c9c4a7cc5e73a0f";
 static NSString * const kRedirectURL = @"reactive-music://callback";
 static NSString * const kSessionKey = @"ReactiveMusicSession";
 
+static NSString * const kAuthenticationNotificationRefreshTokenSuccess = @"AuthenticationNotificationRefreshTokenSuccess";
+static NSString * const kAuthenticationNotificationStartSessionSuccess = @"AuthenticationNotificationStartSessionSuccess";
+static NSString * const kAuthenticationNotificationRefreshTokenFailure = @"AuthenticationNotificationRefreshTokenFailure";
+static NSString * const kAuthenticationNotificationStartSessionFailure = @"AuthenticationNotificationStartSessionFailure";
+
 
 @implementation AuthenticationService
 
@@ -51,30 +56,63 @@ static NSString * const kSessionKey = @"ReactiveMusicSession";
     return safari;
 }
 
-+ (void)startAuthenticationWithUrl:(NSURL *)url andCompletion:(void (^)(NSError *))completion {
++ (void)startSessionWithUrl:(NSURL *)url {
     SPTAuth *auth = [SPTAuth defaultInstance];
     if ([auth canHandleURL:url]) {
         [auth handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
             if (error) {
-                completion(error);
+                [[NSNotificationCenter defaultCenter] postNotificationName:kAuthenticationNotificationStartSessionFailure
+                                                                    object:nil];
             } else {
                 auth.session = session;
-                completion(nil);
+                [[NSNotificationCenter defaultCenter] postNotificationName:kAuthenticationNotificationStartSessionSuccess
+                                                                    object:nil];
             }
         }];
     }
 }
-+ (void)renewTokenWithCompletion:(void (^)(NSError *))completion {
++ (void)refreshToken {
     SPTAuth *auth = [SPTAuth defaultInstance];
     [auth renewSession:auth.session callback:^(NSError *error, SPTSession *session) {
         auth.session = session;
         if (error) {
-            completion(error);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kAuthenticationNotificationRefreshTokenFailure
+                                                                object:nil];
         } else {
             auth.session = session;
-            completion(nil);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kAuthenticationNotificationRefreshTokenSuccess
+                                                                object:nil];
         }
     }];
 }
+
++ (void)subscribeObserverForRefreshTokenSucces:(id)observer andSelector:(SEL)aSelector {
+    [[NSNotificationCenter defaultCenter] addObserver:observer
+                                             selector:aSelector
+                                                 name:kAuthenticationNotificationRefreshTokenSuccess
+                                               object:nil];
+}
+
++ (void)subscribeObserverForRefreshTokenFailure:(id)observer andSelector:(SEL)aSelector {
+    [[NSNotificationCenter defaultCenter] addObserver:observer
+                                             selector:aSelector
+                                                 name:kAuthenticationNotificationRefreshTokenFailure
+                                               object:nil];
+}
+
++ (void)subscribeObserverForStartSessionSucces:(id)observer andSelector:(SEL)aSelector {
+    [[NSNotificationCenter defaultCenter] addObserver:observer
+                                             selector:aSelector
+                                                 name:kAuthenticationNotificationStartSessionSuccess
+                                               object:nil];
+}
+
++ (void)subscribeObserverForStartSessionFailure:(id)observer andSelector:(SEL)aSelector {
+    [[NSNotificationCenter defaultCenter] addObserver:observer
+                                             selector:aSelector
+                                                 name:kAuthenticationNotificationStartSessionFailure
+                                               object:nil];
+}
+
 
 @end
