@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B06DABB1E36D87600E67DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DABA1E36D87600E67DD4 /* main.m */; };
 		4B06DABE1E36D87600E67DD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DABD1E36D87600E67DD4 /* AppDelegate.m */; };
-		4B06DAC11E36D87600E67DD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAC01E36D87600E67DD4 /* ViewController.m */; };
 		4B06DAC41E36D87600E67DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC21E36D87600E67DD4 /* Main.storyboard */; };
 		4B06DAC61E36D87600E67DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC51E36D87600E67DD4 /* Assets.xcassets */; };
 		4B06DAC91E36D87600E67DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */; };
@@ -26,6 +25,9 @@
 		4B06DAED1E3700B400E67DD4 /* SpotifyMetadata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */; };
 		4B06DAF21E37040100E67DD4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */; };
+		4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAF41E3716B000E67DD4 /* LoginViewController.m */; };
+		4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFA1E37170100E67DD4 /* PlayViewController.m */; };
+		4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +63,6 @@
 		4B06DABA1E36D87600E67DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B06DABC1E36D87600E67DD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B06DABD1E36D87600E67DD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4B06DABF1E36D87600E67DD4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4B06DAC01E36D87600E67DD4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B06DAC31E36D87600E67DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B06DAC51E36D87600E67DD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B06DAC81E36D87600E67DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +77,12 @@
 		4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
 		4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4B06DAF31E3716B000E67DD4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4B06DAF41E3716B000E67DD4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4B06DAF91E37170100E67DD4 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		4B06DAFA1E37170100E67DD4 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,13 +139,17 @@
 			children = (
 				4B06DABC1E36D87600E67DD4 /* AppDelegate.h */,
 				4B06DABD1E36D87600E67DD4 /* AppDelegate.m */,
-				4B06DABF1E36D87600E67DD4 /* ViewController.h */,
-				4B06DAC01E36D87600E67DD4 /* ViewController.m */,
 				4B06DAC21E36D87600E67DD4 /* Main.storyboard */,
 				4B06DAC51E36D87600E67DD4 /* Assets.xcassets */,
 				4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */,
 				4B06DACA1E36D87600E67DD4 /* Info.plist */,
+				4B06DAF31E3716B000E67DD4 /* LoginViewController.h */,
+				4B06DAF41E3716B000E67DD4 /* LoginViewController.m */,
+				4B06DAF91E37170100E67DD4 /* PlayViewController.h */,
+				4B06DAFA1E37170100E67DD4 /* PlayViewController.m */,
 				4B06DAB91E36D87600E67DD4 /* Supporting Files */,
+				4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */,
+				4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */,
 			);
 			path = ReativeMusic;
 			sourceTree = "<group>";
@@ -273,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B06DAC11E36D87600E67DD4 /* ViewController.m in Sources */,
+				4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */,
 				4B06DABE1E36D87600E67DD4 /* AppDelegate.m in Sources */,
+				4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */,
+				4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */,
 				4B06DABB1E36D87600E67DD4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
