@@ -123,13 +123,6 @@
 		4B06DAAD1E36D87600E67DD4 = {
 			isa = PBXGroup;
 			children = (
-				4B9156B81E37971500A208C5 /* Result.framework */,
-				4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */,
-				4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */,
-				4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */,
-				4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */,
-				4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */,
-				4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */,
 				4B06DAB81E36D87600E67DD4 /* ReativeMusic */,
 				4B06DAD21E36D87600E67DD4 /* ReativeMusicTests */,
 				4B06DAB71E36D87600E67DD4 /* Products */,
@@ -186,6 +179,13 @@
 		4B06DAEE1E3703F700E67DD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B9156B81E37971500A208C5 /* Result.framework */,
+				4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */,
+				4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */,
+				4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */,
+				4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */,
+				4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */,
+				4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */,
 				4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */,
 				4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */,
 			);
