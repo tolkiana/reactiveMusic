@@ -14,6 +14,10 @@
 		4B06DAC61E36D87600E67DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC51E36D87600E67DD4 /* Assets.xcassets */; };
 		4B06DAC91E36D87600E67DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */; };
 		4B06DAD41E36D87600E67DD4 /* ReativeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAD31E36D87600E67DD4 /* ReativeMusicTests.m */; };
+		4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */; };
+		4B06DAE01E36FFAF00E67DD4 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; };
+		4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,21 @@
 			remoteInfo = ReativeMusic;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B06DAE11E36FFAF00E67DD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4B06DAE01E36FFAF00E67DD4 /* AFNetworking.framework in Embed Frameworks */,
+				4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4B06DAB61E36D87600E67DD4 /* ReativeMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReativeMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +59,8 @@
 		4B06DACF1E36D87600E67DD4 /* ReativeMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReativeMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B06DAD31E36D87600E67DD4 /* ReativeMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReativeMusicTests.m; sourceTree = "<group>"; };
 		4B06DAD51E36D87600E67DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */,
+				4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,8 @@
 		4B06DAAD1E36D87600E67DD4 = {
 			isa = PBXGroup;
 			children = (
+				4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */,
+				4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */,
 				4B06DAB81E36D87600E67DD4 /* ReativeMusic */,
 				4B06DAD21E36D87600E67DD4 /* ReativeMusicTests */,
 				4B06DAB71E36D87600E67DD4 /* Products */,
@@ -121,6 +146,7 @@
 				4B06DAB21E36D87600E67DD4 /* Sources */,
 				4B06DAB31E36D87600E67DD4 /* Frameworks */,
 				4B06DAB41E36D87600E67DD4 /* Resources */,
+				4B06DAE11E36FFAF00E67DD4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tolkiana.ReativeMusic;
@@ -360,6 +390,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tolkiana.ReativeMusic;
