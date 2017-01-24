@@ -152,9 +152,9 @@
 				4B06DAF41E3716B000E67DD4 /* LoginViewController.m */,
 				4B06DAF91E37170100E67DD4 /* PlayViewController.h */,
 				4B06DAFA1E37170100E67DD4 /* PlayViewController.m */,
-				4B06DAB91E36D87600E67DD4 /* Supporting Files */,
 				4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */,
 				4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */,
+				4B06DAB91E36D87600E67DD4 /* Supporting Files */,
 			);
 			path = ReativeMusic;
 			sourceTree = "<group>";
