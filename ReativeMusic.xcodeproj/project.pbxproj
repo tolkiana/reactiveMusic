@@ -24,6 +24,8 @@
 		4B06DAEB1E3700B400E67DD4 /* SpotifyAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAEC1E3700B400E67DD4 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */; };
 		4B06DAED1E3700B400E67DD4 /* SpotifyMetadata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */; };
+		4B06DAF21E37040100E67DD4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		4B06DAE71E3700B400E67DD4 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
+		4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B06DAF21E37040100E67DD4 /* SystemConfiguration.framework in Frameworks */,
+				4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */,
 				4B06DAEC1E3700B400E67DD4 /* SpotifyMetadata.framework in Frameworks */,
 				4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */,
 				4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */,
@@ -109,6 +115,7 @@
 				4B06DAB81E36D87600E67DD4 /* ReativeMusic */,
 				4B06DAD21E36D87600E67DD4 /* ReativeMusicTests */,
 				4B06DAB71E36D87600E67DD4 /* Products */,
+				4B06DAEE1E3703F700E67DD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +159,15 @@
 				4B06DAD51E36D87600E67DD4 /* Info.plist */,
 			);
 			path = ReativeMusicTests;
+			sourceTree = "<group>";
+		};
+		4B06DAEE1E3703F700E67DD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */,
+				4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +416,8 @@
 				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tolkiana.ReativeMusic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tolkiana.ReativeMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -416,7 +433,8 @@
 				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tolkiana.ReativeMusic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tolkiana.ReativeMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
