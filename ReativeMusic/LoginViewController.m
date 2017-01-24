@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "AuthenticationService.h"
 
+static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
+
 @interface LoginViewController ()
 
 @end
@@ -17,8 +19,8 @@
 
 #pragma mark - View life cycle
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self checkAuthenticationStatus];
     [AuthenticationService subscribeObserverForStartSessionSucces:self andSelector:@selector(sessionStartedNotification:)];
     [AuthenticationService subscribeObserverForRefreshTokenSucces:self andSelector:@selector(tokenRefreshedNotification:)];
@@ -40,6 +42,7 @@
             [AuthenticationService refreshToken];
             break;
         case AuthenticationStatusValidSession:
+            [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
             break;
         default:
             break;
@@ -60,7 +63,7 @@
 }
 
 - (void)tokenRefreshedNotification:(NSNotification *)notification {
-    
+    [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
 }
 
 
