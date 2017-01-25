@@ -113,12 +113,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Reactive Music" id="xhL-hc-TcR"/>
                     <connections>
-                        <segue destination="KmL-o4-BGO" kind="show" identifier="SegueDetailIdentifier" action="showDetailViewController:sender:" id="r7r-RY-DvW"/>
+                        <segue destination="KmL-o4-BGO" kind="show" identifier="SegueDetailIdentifier" id="JUu-Kc-viA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU5-mW-29q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="152"/>
+            <point key="canvasLocation" x="1671" y="153"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="pi0-U8-NUI">
@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yx-mB-U8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2621.5999999999999" y="152.47376311844079"/>
+            <point key="canvasLocation" x="2412" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pu6-BE-vGV">

@@ -56,6 +56,7 @@ static NSString * const kBlueColorHexString = @"#286591";
                                                                forKey:NSForegroundColorAttributeName];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:kLightBlueColorHexString]];
     [[UINavigationBar appearance] setTitleTextAttributes: textAttributes];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 #pragma mark - Table view data source
