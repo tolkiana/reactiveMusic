@@ -113,7 +113,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Reactive Music" id="xhL-hc-TcR"/>
                     <connections>
-                        <segue destination="KmL-o4-BGO" kind="showDetail" id="r7r-RY-DvW"/>
+                        <segue destination="KmL-o4-BGO" kind="show" identifier="SegueDetailIdentifier" action="showDetailViewController:sender:" id="r7r-RY-DvW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU5-mW-29q" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,12 +7,14 @@
 //
 
 #import "SearchViewController.h"
+#import "PlayViewController.h"
 #import "AuthenticationService.h"
 #import "TrackSearchViewModel.h"
 #import "TrackTableViewCell.h"
 #import "UIColor+Utilities.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
 
+static NSString * const kSegueDetailIdentifier = @"SegueDetailIdentifier";
 static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 static NSString * const kLightBlueColorHexString = @"#4091cb";
 static NSString * const kBlueColorHexString = @"#286591";
@@ -76,7 +78,15 @@ static NSString * const kBlueColorHexString = @"#286591";
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kSegueDetailIdentifier sender:self];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kSegueDetailIdentifier]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PlayViewController *destinationController = segue.destinationViewController;
+        destinationController.trackViewModel = [self.tracks objectAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - UISearchResultsUpdating

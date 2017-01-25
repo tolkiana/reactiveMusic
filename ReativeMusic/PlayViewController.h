@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class TrackSearchViewModel;
 @interface PlayViewController : UIViewController
+
+@property(nonatomic, strong) TrackSearchViewModel *trackViewModel;
 
 @end
