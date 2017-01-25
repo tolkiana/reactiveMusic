@@ -9,7 +9,7 @@
 #import "SearchViewController.h"
 #import "PlayViewController.h"
 #import "AuthenticationService.h"
-#import "TrackSearchViewModel.h"
+#import "TrackViewModel.h"
 #import "TrackTableViewCell.h"
 #import "UIColor+Utilities.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
@@ -21,7 +21,7 @@ static NSString * const kBlueColorHexString = @"#286591";
 
 @interface SearchViewController () <UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray<TrackSearchViewModel *> *tracks;
+@property (nonatomic, strong) NSArray<TrackViewModel *> *tracks;
 @property (nonatomic, strong) UISearchController *searchController;
 
 @end
@@ -70,7 +70,7 @@ static NSString * const kBlueColorHexString = @"#286591";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTrackCellIdentifier
                                                             forIndexPath:indexPath];
-    TrackSearchViewModel *trackViewModel = [self.tracks objectAtIndex:indexPath.row];
+    TrackViewModel *trackViewModel = [self.tracks objectAtIndex:indexPath.row];
     [cell configureWithViewModel:trackViewModel];
     return cell;
 }
@@ -116,11 +116,11 @@ static NSString * const kBlueColorHexString = @"#286591";
      }];
 }
 
-- (NSArray<TrackSearchViewModel *> *)tracksWithResults:(SPTListPage *)results {
+- (NSArray<TrackViewModel *> *)tracksWithResults:(SPTListPage *)results {
     NSArray<SPTPartialTrack *> *trackResults = [results items];
-    NSMutableArray<TrackSearchViewModel *> *models = [NSMutableArray new];
+    NSMutableArray<TrackViewModel *> *models = [NSMutableArray new];
     for (SPTPartialTrack *trackResult in trackResults) {
-        TrackSearchViewModel *model = [[TrackSearchViewModel alloc] initWithPartialTrack:trackResult];
+        TrackViewModel *model = [[TrackViewModel alloc] initWithPartialTrack:trackResult];
         [models addObject:model];
     }
     return models;

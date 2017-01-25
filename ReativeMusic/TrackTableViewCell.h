@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class TrackSearchViewModel;
+@class TrackViewModel;
 @interface TrackTableViewCell : UITableViewCell
 
-- (void)configureWithViewModel:(TrackSearchViewModel *)trackSearchViewModel;
+- (void)configureWithViewModel:(TrackViewModel *)TrackViewModel;
 
 @end

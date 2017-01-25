@@ -1,15 +1,15 @@
 //
-//  TrackSearchViewModel.m
+//  TrackViewModel.m
 //  ReativeMusic
 //
 //  Created by Nelida Velazquez on 1/24/17.
 //  Copyright © 2017 tolkiana. All rights reserved.
 //
 
-#import "TrackSearchViewModel.h"
+#import "TrackViewModel.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
 
-@implementation TrackSearchViewModel
+@implementation TrackViewModel
 
 - (instancetype)initWithTrackName:(NSString *)trackName andArtistName:(NSString *)artistName {
     self = [super init];

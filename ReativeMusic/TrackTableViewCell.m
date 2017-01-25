@@ -7,7 +7,7 @@
 //
 
 #import "TrackTableViewCell.h"
-#import "TrackSearchViewModel.h"
+#import "TrackViewModel.h"
 
 @interface TrackTableViewCell()
 
@@ -18,9 +18,9 @@
 
 @implementation TrackTableViewCell
 
-- (void)configureWithViewModel:(TrackSearchViewModel *)trackSearchViewModel {
-    self.trackTitle.text = trackSearchViewModel.tracKName;
-    self.artistName.text = trackSearchViewModel.artistName;
+- (void)configureWithViewModel:(TrackViewModel *)TrackViewModel {
+    self.trackTitle.text = TrackViewModel.tracKName;
+    self.artistName.text = TrackViewModel.artistName;
 }
 
 @end

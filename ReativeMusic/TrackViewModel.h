@@ -1,5 +1,5 @@
 //
-//  TrackSearchViewModel.h
+//  TrackViewModel.h
 //  ReativeMusic
 //
 //  Created by Nelida Velazquez on 1/24/17.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @class SPTPartialTrack;
-@interface TrackSearchViewModel : NSObject
+@interface TrackViewModel : NSObject
 
 @property (nonatomic, strong) NSString *artistName;
 @property (nonatomic, strong) NSString *tracKName;
