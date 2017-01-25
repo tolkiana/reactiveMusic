@@ -26,6 +26,7 @@
         SPTPartialArtist *artist = partialTrack.artists.firstObject;
         _tracKName = partialTrack.name;
         _artistName = artist.name;
+        _albumImageURL = partialTrack.album.largestCover.imageURL;
     }
     return self;
 }

@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class SPTPartialTrack;
 @interface TrackSearchViewModel : NSObject
 
 @property (nonatomic, strong) NSString *artistName;
 @property (nonatomic, strong) NSString *tracKName;
+@property (nonatomic, strong) NSURL *albumImageURL;
 
 - (instancetype)initWithTrackName:(NSString *)trackName
                     andArtistName:(NSString *)artistName;
