@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackCellIdentifier" rowHeight="65" id="NdM-L2-GpH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackCellIdentifier" rowHeight="65" id="NdM-L2-GpH" customClass="TrackTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdM-L2-GpH" id="mPA-Sr-M3Q">
@@ -99,6 +99,10 @@
                                         <constraint firstItem="vd0-kc-vew" firstAttribute="top" secondItem="mPA-Sr-M3Q" secondAttribute="topMargin" id="vE0-sH-uWk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artistName" destination="res-YA-q9L" id="lrI-Cv-WJb"/>
+                                    <outlet property="trackTitle" destination="vd0-kc-vew" id="91B-23-tyK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
