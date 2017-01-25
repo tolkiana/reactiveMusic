@@ -8,10 +8,11 @@
 
 #import "SearchViewController.h"
 #import "PlayViewController.h"
-#import "AuthenticationService.h"
 #import "TrackViewModel.h"
 #import "TrackTableViewCell.h"
 #import "UIColor+Utilities.h"
+#import "AuthenticationService.h"
+#import "SearchService.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
 
 static NSString * const kSegueDetailIdentifier = @"SegueDetailIdentifier";
@@ -94,39 +95,11 @@ static NSString * const kBlueColorHexString = @"#286591";
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    [self searchWithString:searchController.searchBar.text];
+    NSString *searchText = searchController.searchBar.text;
+    [SearchService searchWithString:searchText withCompletion:^(NSArray<TrackViewModel *> *results) {
+        self.tracks = results;
+        [self.tableView reloadData];
+    }];
 }
-
-#pragma mark - Search Methods
-
-- (void)searchWithString:(NSString *)string {
-    
-    SPTSearchQueryType queryType = SPTQueryTypeTrack;
-    
-    [SPTSearch performSearchWithQuery:string
-                            queryType:queryType
-                          accessToken:[AuthenticationService accessToken]
-                             callback:^(NSError *error, id object) {
-         if( error ) {
-             NSLog(@"Search error: %@", error );
-             return;
-         }
-         self.tracks = [self tracksWithResults:object];
-         [self.tableView reloadData];
-     }];
-}
-
-- (NSArray<TrackViewModel *> *)tracksWithResults:(SPTListPage *)results {
-    NSArray<SPTPartialTrack *> *trackResults = [results items];
-    NSMutableArray<TrackViewModel *> *models = [NSMutableArray new];
-    for (SPTPartialTrack *trackResult in trackResults) {
-        TrackViewModel *model = [[TrackViewModel alloc] initWithPartialTrack:trackResult];
-        [models addObject:model];
-    }
-    return models;
-}
-
-
-
 
 @end

@@ -36,6 +36,7 @@
 		4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701871E38250900DA5C7B /* TrackTableViewCell.m */; };
 		4BD7018C1E38261500DA5C7B /* TrackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackViewModel.m */; };
 		4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */; };
+		4BD701991E38505A00DA5C7B /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701981E38505A00DA5C7B /* SearchService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		4BD7018B1E38261500DA5C7B /* TrackViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewModel.m; sourceTree = "<group>"; };
 		4BD701911E383EA600DA5C7B /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
 		4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
+		4BD701971E38505A00DA5C7B /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
+		4BD701981E38505A00DA5C7B /* SearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +232,8 @@
 			children = (
 				4B9156BE1E37E57200A208C5 /* AuthenticationService.h */,
 				4B9156BF1E37E57200A208C5 /* AuthenticationService.m */,
+				4BD701971E38505A00DA5C7B /* SearchService.h */,
+				4BD701981E38505A00DA5C7B /* SearchService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				4B06DABE1E36D87600E67DD4 /* AppDelegate.m in Sources */,
 				4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */,
 				4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */,
+				4BD701991E38505A00DA5C7B /* SearchService.m in Sources */,
 				4B06DABB1E36D87600E67DD4 /* main.m in Sources */,
 				4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */,
 			);
