@@ -10,6 +10,10 @@
 
 @interface PlayViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *trackTitle;
+@property (strong, nonatomic) IBOutlet UILabel *artistName;
+@property (strong, nonatomic) IBOutlet UIImageView *albumImage;
+
 @end
 
 @implementation PlayViewController
