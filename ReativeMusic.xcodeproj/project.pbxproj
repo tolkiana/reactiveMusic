@@ -13,8 +13,6 @@
 		4B06DAC61E36D87600E67DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC51E36D87600E67DD4 /* Assets.xcassets */; };
 		4B06DAC91E36D87600E67DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */; };
 		4B06DAD41E36D87600E67DD4 /* ReativeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAD31E36D87600E67DD4 /* ReativeMusicTests.m */; };
-		4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */; };
-		4B06DAE01E36FFAF00E67DD4 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; };
 		4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAE81E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */; };
@@ -37,6 +35,8 @@
 		4BD7018C1E38261500DA5C7B /* TrackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackViewModel.m */; };
 		4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */; };
 		4BD701991E38505A00DA5C7B /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701981E38505A00DA5C7B /* SearchService.m */; };
+		4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; };
+		4BD701A11E38570200DA5C7B /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,9 @@
 			files = (
 				4B06DAED1E3700B400E67DD4 /* SpotifyMetadata.framework in Embed Frameworks */,
 				4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */,
-				4B06DAE01E36FFAF00E67DD4 /* AFNetworking.framework in Embed Frameworks */,
 				4B06DAEB1E3700B400E67DD4 /* SpotifyAuthentication.framework in Embed Frameworks */,
 				4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */,
+				4BD701A11E38570200DA5C7B /* WebImage.framework in Embed Frameworks */,
 				4B06DAE91E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Embed Frameworks */,
 				4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */,
 			);
@@ -106,6 +106,9 @@
 		4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		4BD701971E38505A00DA5C7B /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
 		4BD701981E38505A00DA5C7B /* SearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
+		4BD7019A1E38565F00DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		4BD7019C1E3856F000DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		4BD7019F1E38570200DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +119,9 @@
 				4B06DAF21E37040100E67DD4 /* SystemConfiguration.framework in Frameworks */,
 				4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */,
 				4B06DAEC1E3700B400E67DD4 /* SpotifyMetadata.framework in Frameworks */,
+				4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */,
 				4B9156B91E37971500A208C5 /* Result.framework in Frameworks */,
 				4B06DB001E3796AB00E67DD4 /* ReactiveSwift.framework in Frameworks */,
-				4B06DADF1E36FFAF00E67DD4 /* AFNetworking.framework in Frameworks */,
 				4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */,
 				4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */,
 				4B06DAE81E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Frameworks */,
@@ -194,6 +197,9 @@
 		4B06DAEE1E3703F700E67DD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BD7019F1E38570200DA5C7B /* WebImage.framework */,
+				4BD7019C1E3856F000DA5C7B /* WebImage.framework */,
+				4BD7019A1E38565F00DA5C7B /* WebImage.framework */,
 				4B9156B81E37971500A208C5 /* Result.framework */,
 				4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */,
 				4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */,
