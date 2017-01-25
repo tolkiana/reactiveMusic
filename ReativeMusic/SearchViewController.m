@@ -7,14 +7,24 @@
 //
 
 #import "SearchViewController.h"
+#import "AuthenticationService.h"
+#import <SpotifyMetadata/SpotifyMetadata.h>
+
+static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 
 @interface SearchViewController ()
+
+@property (nonatomic, strong) NSArray<SPTPartialTrack *> *playlists;
 
 @end
 
 @implementation SearchViewController
 
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self searchWithString:@"Bulls on parade"];
+}
 
 #pragma mark - Table view data source
 
@@ -81,5 +91,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)searchWithString:(NSString *)string {
+    
+    SPTSearchQueryType queryType = SPTQueryTypeTrack;
+    
+    [SPTSearch performSearchWithQuery:string
+                            queryType:queryType
+                          accessToken:[AuthenticationService accessToken]
+                             callback:^(NSError *error, id object) {
+         if( error ) {
+             NSLog(@"Search error: %@", error );
+             return;
+         }
+         
+         SPTListPage *resultsPage = (SPTListPage *)object;
+         self.playlists = [resultsPage items];
+         [self.tableView reloadData];
+     }];
+}
+
 
 @end
