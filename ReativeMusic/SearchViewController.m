@@ -82,8 +82,7 @@ static NSString * const kBlueColorHexString = @"#286591";
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSString *searchString = searchController.searchBar.text;
-    [self searchWithString:searchString];
+    [self searchWithString:searchController.searchBar.text];
 }
 
 #pragma mark - Search Methods
