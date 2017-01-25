@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="154"/>
         </scene>
-        <!--Reactive Music-->
+        <!--Search-->
         <scene sceneID="9Tk-aC-puy">
             <objects>
                 <tableViewController id="7t7-8z-WvA" customClass="SearchViewController" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                             <outlet property="delegate" destination="7t7-8z-WvA" id="IgP-jB-FsR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reactive Music" id="xhL-hc-TcR"/>
+                    <navigationItem key="navigationItem" title="Search" id="xhL-hc-TcR"/>
                     <connections>
                         <segue destination="KmL-o4-BGO" kind="show" identifier="SegueDetailIdentifier" id="JUu-Kc-viA"/>
                     </connections>
@@ -132,12 +132,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-kP-YWf">
-                                <rect key="frame" x="162" y="517" width="50" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6NN-t3-dsA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-kP-YWf">
+                                <rect key="frame" x="164" y="502" width="47" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="rVU-d2-7ww"/>
+                                    <constraint firstAttribute="height" constant="45" id="fvF-Bw-aEl"/>
+                                    <constraint firstAttribute="width" secondItem="PHL-kP-YWf" secondAttribute="height" multiplier="24:23" id="j0W-Q9-8Sh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="uME-KE-Cit"/>
                                 </constraints>
-                                <state key="normal" title="Play">
+                                <state key="normal" image="play_button">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -148,20 +153,19 @@
                                     <constraint firstAttribute="height" constant="30" id="aXn-Dd-iuy"/>
                                 </constraints>
                             </slider>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6NN-t3-dsA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-9C-8rG">
-                                <rect key="frame" x="25" y="75" width="325" height="27"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="25" y="119" width="325" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hg-ma-e83">
-                                <rect key="frame" x="56" y="120" width="263" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="56" y="165" width="263" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yx-mB-U8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="153"/>
+            <point key="canvasLocation" x="2412" y="152.47376311844079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pu6-BE-vGV">
@@ -214,5 +218,6 @@
     </scenes>
     <resources>
         <image name="background" width="281" height="604"/>
+        <image name="play_button" width="512" height="512"/>
     </resources>
 </document>

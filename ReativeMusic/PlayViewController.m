@@ -8,6 +8,7 @@
 
 #import "PlayViewController.h"
 #import "TrackViewModel.h"
+#import <WebImage/UIImageView+WebCache.h>
 
 @interface PlayViewController ()
 
@@ -31,6 +32,7 @@
 - (void)setupViews {
     self.trackTitle.text = self.trackViewModel.tracKName;
     self.artistName.text = self.trackViewModel.artistName;
+    [self.albumImage sd_setImageWithURL:self.trackViewModel.albumImageURL];
 }
 
 
