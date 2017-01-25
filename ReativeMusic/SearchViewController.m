@@ -60,12 +60,12 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
              NSLog(@"Search error: %@", error );
              return;
          }
-         self.tracks = [self tracksArrayWithResults:object];
+         self.tracks = [self tracksWithResults:object];
          [self.tableView reloadData];
      }];
 }
 
-- (NSArray<TrackSearchViewModel *> *)tracksArrayWithResults:(SPTListPage *)results {
+- (NSArray<TrackSearchViewModel *> *)tracksWithResults:(SPTListPage *)results {
     NSArray<SPTPartialTrack *> *trackResults = [results items];
     NSMutableArray<TrackSearchViewModel *> *models = [NSMutableArray new];
     for (SPTPartialTrack *trackResult in trackResults) {
