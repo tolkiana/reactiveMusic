@@ -14,18 +14,33 @@
 
 static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 
-@interface SearchViewController ()
+@interface SearchViewController () <UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray<TrackSearchViewModel *> *tracks;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
 @implementation SearchViewController
 
+#pragma mark - View Life cycle
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self searchWithString:@"Bulls on parade"];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self configureSearchController];
+}
+
+#pragma mark - Views Setup
+
+- (void)configureSearchController {
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.delegate = self;
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.definesPresentationContext = YES;
+    [self.searchController.searchBar sizeToFit];
 }
 
 #pragma mark - Table view data source
@@ -44,6 +59,19 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
     TrackSearchViewModel *trackViewModel = [self.tracks objectAtIndex:indexPath.row];
     [cell configureWithViewModel:trackViewModel];
     return cell;
+}
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchString = searchController.searchBar.text;
+    [self searchWithString:searchString];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+
 }
 
 #pragma mark - Search Methods
