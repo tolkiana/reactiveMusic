@@ -55,6 +55,7 @@
                             <constraint firstItem="r63-ad-7WQ" firstAttribute="centerX" secondItem="70q-So-bAh" secondAttribute="centerX" id="xYq-in-k54"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="33q-zd-0cY" kind="presentation" identifier="SegueSearchIdentifier" modalTransitionStyle="flipHorizontal" id="sl6-VB-JSX"/>
                     </connections>
@@ -63,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="154"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Reactive Music-->
         <scene sceneID="9Tk-aC-puy">
             <objects>
                 <tableViewController id="7t7-8z-WvA" customClass="SearchViewController" sceneMemberID="viewController">
@@ -110,14 +111,14 @@
                             <outlet property="delegate" destination="7t7-8z-WvA" id="IgP-jB-FsR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xhL-hc-TcR"/>
+                    <navigationItem key="navigationItem" title="Reactive Music" id="xhL-hc-TcR"/>
                     <connections>
                         <segue destination="KmL-o4-BGO" kind="showDetail" id="r7r-RY-DvW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU5-mW-29q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="152.47376311844079"/>
+            <point key="canvasLocation" x="1830" y="152"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="pi0-U8-NUI">
@@ -173,6 +174,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="33q-zd-0cY" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEu-n3-mA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

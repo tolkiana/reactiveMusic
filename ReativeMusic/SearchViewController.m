@@ -10,9 +10,12 @@
 #import "AuthenticationService.h"
 #import "TrackSearchViewModel.h"
 #import "TrackTableViewCell.h"
+#import "UIColor+Utilities.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
 
 static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
+static NSString * const kLightBlueColorHexString = @"#4091cb";
+static NSString * const kBlueColorHexString = @"#286591";
 
 @interface SearchViewController () <UISearchResultsUpdating, UISearchBarDelegate>
 
@@ -27,20 +30,30 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureSearchController];
+    [self setupSearchController];
+    [self setupNatigationBar];
 }
 
 #pragma mark - Views Setup
 
-- (void)configureSearchController {
+- (void)setupSearchController {
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
+    self.searchController.searchBar.barTintColor = [UIColor colorWithHexString:kBlueColorHexString];
+    self.searchController.searchBar.tintColor = [UIColor whiteColor];
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
     [self.searchController.searchBar sizeToFit];
+}
+
+- (void)setupNatigationBar {
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                               forKey:NSForegroundColorAttributeName];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:kLightBlueColorHexString]];
+    [[UINavigationBar appearance] setTitleTextAttributes: textAttributes];
 }
 
 #pragma mark - Table view data source

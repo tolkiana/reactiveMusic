@@ -35,6 +35,7 @@
 		4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9156BF1E37E57200A208C5 /* AuthenticationService.m */; };
 		4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701871E38250900DA5C7B /* TrackTableViewCell.m */; };
 		4BD7018C1E38261500DA5C7B /* TrackSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */; };
+		4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		4BD701871E38250900DA5C7B /* TrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackTableViewCell.m; sourceTree = "<group>"; };
 		4BD7018A1E38261500DA5C7B /* TrackSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSearchViewModel.h; sourceTree = "<group>"; };
 		4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSearchViewModel.m; sourceTree = "<group>"; };
+		4BD701911E383EA600DA5C7B /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
+		4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		4B06DAB81E36D87600E67DD4 /* ReativeMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4BD7018D1E383C2600DA5C7B /* CocoaExtensions */,
 				4BD701891E3825E400DA5C7B /* ViewModels */,
 				4B9156BD1E37E55100A208C5 /* Services */,
 				4B9156BC1E37E53800A208C5 /* Storyboards */,
@@ -245,6 +249,15 @@
 				4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		4BD7018D1E383C2600DA5C7B /* CocoaExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BD701911E383EA600DA5C7B /* UIColor+Utilities.h */,
+				4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */,
+			);
+			name = CocoaExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +371,7 @@
 				4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */,
 				4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */,
 				4B06DABB1E36D87600E67DD4 /* main.m in Sources */,
+				4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
