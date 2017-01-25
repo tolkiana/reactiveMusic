@@ -7,6 +7,7 @@
 //
 
 #import "PlayViewController.h"
+#import "TrackViewModel.h"
 
 @interface PlayViewController ()
 
@@ -17,5 +18,20 @@
 @end
 
 @implementation PlayViewController
+
+#pragma mark - View Life cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupViews];
+}
+
+#pragma mark - Views Setup
+
+- (void)setupViews {
+    self.trackTitle.text = self.trackViewModel.tracKName;
+    self.artistName.text = self.trackViewModel.artistName;
+}
+
 
 @end
