@@ -34,6 +34,7 @@
 		4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9156BF1E37E57200A208C5 /* AuthenticationService.m */; };
 		4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701871E38250900DA5C7B /* TrackTableViewCell.m */; };
+		4BD7018C1E38261500DA5C7B /* TrackSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		4B9156BF1E37E57200A208C5 /* AuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationService.m; sourceTree = "<group>"; };
 		4BD701861E38250900DA5C7B /* TrackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackTableViewCell.h; sourceTree = "<group>"; };
 		4BD701871E38250900DA5C7B /* TrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackTableViewCell.m; sourceTree = "<group>"; };
+		4BD7018A1E38261500DA5C7B /* TrackSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSearchViewModel.h; sourceTree = "<group>"; };
+		4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSearchViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 		4B06DAB81E36D87600E67DD4 /* ReativeMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4BD701891E3825E400DA5C7B /* ViewModels */,
 				4B9156BD1E37E55100A208C5 /* Services */,
 				4B9156BC1E37E53800A208C5 /* Storyboards */,
 				4BD701851E3824E900DA5C7B /* Cells */,
@@ -232,6 +236,15 @@
 				4BD701871E38250900DA5C7B /* TrackTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		4BD701891E3825E400DA5C7B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4BD7018A1E38261500DA5C7B /* TrackSearchViewModel.h */,
+				4BD7018B1E38261500DA5C7B /* TrackSearchViewModel.m */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD7018C1E38261500DA5C7B /* TrackSearchViewModel.m in Sources */,
 				4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */,
 				4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */,
 				4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */,
