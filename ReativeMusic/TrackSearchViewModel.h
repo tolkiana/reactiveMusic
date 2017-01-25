@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class SPTPartialTrack;
 @interface TrackSearchViewModel : NSObject
 
 @property (nonatomic, strong) NSString *artistName;
@@ -15,5 +16,7 @@
 
 - (instancetype)initWithTrackName:(NSString *)trackName
                     andArtistName:(NSString *)artistName;
+
+- (instancetype)initWithPartialTrack:(SPTPartialTrack *)partialTrack;
 
 @end

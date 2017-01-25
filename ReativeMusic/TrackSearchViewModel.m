@@ -7,6 +7,7 @@
 //
 
 #import "TrackSearchViewModel.h"
+#import <SpotifyMetadata/SpotifyMetadata.h>
 
 @implementation TrackSearchViewModel
 
@@ -15,6 +16,16 @@
     if (self) {
         _tracKName = trackName;
         _artistName = artistName;
+    }
+    return self;
+}
+
+- (instancetype)initWithPartialTrack:(SPTPartialTrack *)partialTrack {
+    self = [super init];
+    if (self) {
+        SPTPartialArtist *artist = partialTrack.artists.firstObject;
+        _tracKName = partialTrack.name;
+        _artistName = artist.name;
     }
     return self;
 }
