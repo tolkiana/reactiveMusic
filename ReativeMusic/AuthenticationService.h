@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatus) {
 + (UIViewController *)authenticationController;
 + (void)startSessionWithUrl:(NSURL *)url;
 + (void)refreshToken;
++ (NSString *)accessToken;
 
 + (void)subscribeObserverForRefreshTokenSucces:(id)observer andSelector:(SEL)aSelector;
 + (void)subscribeObserverForRefreshTokenFailure:(id)observer andSelector:(SEL)aSelector;
