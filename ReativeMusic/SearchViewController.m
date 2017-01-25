@@ -17,7 +17,7 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 static NSString * const kLightBlueColorHexString = @"#4091cb";
 static NSString * const kBlueColorHexString = @"#286591";
 
-@interface SearchViewController () <UISearchResultsUpdating, UISearchBarDelegate>
+@interface SearchViewController () <UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray<TrackSearchViewModel *> *tracks;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -40,7 +40,6 @@ static NSString * const kBlueColorHexString = @"#286591";
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
-    self.searchController.searchBar.delegate = self;
     self.searchController.searchBar.barTintColor = [UIColor colorWithHexString:kBlueColorHexString];
     self.searchController.searchBar.tintColor = [UIColor whiteColor];
     
@@ -74,17 +73,17 @@ static NSString * const kBlueColorHexString = @"#286591";
     return cell;
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchString = searchController.searchBar.text;
     [self searchWithString:searchString];
-}
-
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
-
 }
 
 #pragma mark - Search Methods
