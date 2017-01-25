@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class TrackSearchViewModel;
 @interface TrackTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *trackTitle;
-@property (strong, nonatomic) IBOutlet UILabel *artistName;
+- (void)configureWithViewModel:(TrackSearchViewModel *)trackSearchViewModel;
 
 @end
