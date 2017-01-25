@@ -81,6 +81,8 @@ static NSString * const kBlueColorHexString = @"#286591";
     [self performSegueWithIdentifier:kSegueDetailIdentifier sender:self];
 }
 
+#pragma mark - Prepare for segue
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kSegueDetailIdentifier]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
