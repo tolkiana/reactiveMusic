@@ -8,13 +8,15 @@
 
 #import "SearchViewController.h"
 #import "AuthenticationService.h"
+#import "TrackSearchViewModel.h"
+#import "TrackTableViewCell.h"
 #import <SpotifyMetadata/SpotifyMetadata.h>
 
 static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 
 @interface SearchViewController ()
 
-@property (nonatomic, strong) NSArray<SPTPartialTrack *> *playlists;
+@property (nonatomic, strong) NSArray<TrackSearchViewModel *> *tracks;
 
 @end
 
@@ -33,12 +35,14 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.playlists.count;
+    return self.tracks.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTrackCellIdentifier
+    TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTrackCellIdentifier
                                                             forIndexPath:indexPath];
+    TrackSearchViewModel *trackViewModel = [self.tracks objectAtIndex:indexPath.row];
+    [cell configureWithViewModel:trackViewModel];
     return cell;
 }
 
@@ -65,12 +69,22 @@ static NSString * const kTrackCellIdentifier = @"TrackCellIdentifier";
              NSLog(@"Search error: %@", error );
              return;
          }
-         
-         SPTListPage *resultsPage = (SPTListPage *)object;
-         self.playlists = [resultsPage items];
+         self.tracks = [self tracksArrayWithResults:object];
          [self.tableView reloadData];
      }];
 }
+
+- (NSArray<TrackSearchViewModel *> *)tracksArrayWithResults:(SPTListPage *)results {
+    NSArray<SPTPartialTrack *> *trackResults = [results items];
+    NSMutableArray<TrackSearchViewModel *> *models = [NSMutableArray new];
+    for (SPTPartialTrack *trackResult in trackResults) {
+        TrackSearchViewModel *model = [[TrackSearchViewModel alloc] initWithPartialTrack:trackResult];
+        [models addObject:model];
+    }
+    return models;
+}
+
+
 
 
 @end
