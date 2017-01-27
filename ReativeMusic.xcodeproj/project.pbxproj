@@ -31,7 +31,7 @@
 		4BD701991E38505A00DA5C7B /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701981E38505A00DA5C7B /* SearchService.m */; };
 		4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; };
 		4BD701A11E38570200DA5C7B /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		96EF0DE556882BCE16D43359 /* Pods_ReativeMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */; };
+		F1C736116C11BC039F2C6807 /* Pods_ReativeMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C52C90C437318ECFCF616E4 /* Pods_ReativeMusic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C52C90C437318ECFCF616E4 /* Pods_ReativeMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReativeMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BF884021913326B6F65750 /* Pods-ReativeMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.release.xcconfig"; sourceTree = "<group>"; };
 		4B06DAB61E36D87600E67DD4 /* ReativeMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReativeMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B06DABA1E36D87600E67DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B06DABC1E36D87600E67DD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,9 +103,7 @@
 		4BD7019A1E38565F00DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		4BD7019C1E3856F000DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		4BD7019F1E38570200DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
-		535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.release.xcconfig"; sourceTree = "<group>"; };
-		603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReativeMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		CF5492EC50D4E0E6B122C73C /* Pods-ReativeMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 				4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */,
 				4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */,
 				4B06DAE81E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Frameworks */,
-				96EF0DE556882BCE16D43359 /* Pods_ReativeMusic.framework in Frameworks */,
+				F1C736116C11BC039F2C6807 /* Pods_ReativeMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09034C45E3B1A12F64978B45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF5492EC50D4E0E6B122C73C /* Pods-ReativeMusic.debug.xcconfig */,
+				33BF884021913326B6F65750 /* Pods-ReativeMusic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4B06DAAD1E36D87600E67DD4 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +147,7 @@
 				4B06DAD21E36D87600E67DD4 /* ReativeMusicTests */,
 				4B06DAB71E36D87600E67DD4 /* Products */,
 				4B06DAEE1E3703F700E67DD4 /* Frameworks */,
-				8D45A8C6A46A35760A257A73 /* Pods */,
+				09034C45E3B1A12F64978B45 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,7 +212,7 @@
 				4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */,
 				4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */,
 				4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */,
-				603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */,
+				0C52C90C437318ECFCF616E4 /* Pods_ReativeMusic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,15 +275,6 @@
 			name = CocoaExtensions;
 			sourceTree = "<group>";
 		};
-		8D45A8C6A46A35760A257A73 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */,
-				535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,13 +282,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B06DAD81E36D87600E67DD4 /* Build configuration list for PBXNativeTarget "ReativeMusic" */;
 			buildPhases = (
-				B0C481D98DF0A1D856190B5A /* [CP] Check Pods Manifest.lock */,
+				E90705185847F47407E0C709 /* [CP] Check Pods Manifest.lock */,
 				4B06DAB21E36D87600E67DD4 /* Sources */,
 				4B06DAB31E36D87600E67DD4 /* Frameworks */,
 				4B06DAB41E36D87600E67DD4 /* Resources */,
 				4B06DAE11E36FFAF00E67DD4 /* Embed Frameworks */,
-				D2C1F87645CD7C9D5328378A /* [CP] Embed Pods Frameworks */,
-				4EC44B243F75AD467AD20519 /* [CP] Copy Pods Resources */,
+				8C943B1B4F65394BD10859D3 /* [CP] Embed Pods Frameworks */,
+				243FAF3D9FB142187A94AA42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,7 +377,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4EC44B243F75AD467AD20519 /* [CP] Copy Pods Resources */ = {
+		243FAF3D9FB142187A94AA42 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,22 +392,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0C481D98DF0A1D856190B5A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D2C1F87645CD7C9D5328378A /* [CP] Embed Pods Frameworks */ = {
+		8C943B1B4F65394BD10859D3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,6 +405,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E90705185847F47407E0C709 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -570,7 +570,7 @@
 		};
 		4B06DAD91E36D87600E67DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */;
+			baseConfigurationReference = CF5492EC50D4E0E6B122C73C /* Pods-ReativeMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -588,7 +588,7 @@
 		};
 		4B06DADA1E36D87600E67DD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */;
+			baseConfigurationReference = 33BF884021913326B6F65750 /* Pods-ReativeMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

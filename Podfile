@@ -1,3 +1,3 @@
 use_frameworks!
 target 'ReativeMusic'
-pod 'ReactiveCocoa'
+pod 'ReactiveCocoa', '2.1.8'
