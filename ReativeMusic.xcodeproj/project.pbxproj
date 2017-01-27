@@ -13,8 +13,6 @@
 		4B06DAC61E36D87600E67DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC51E36D87600E67DD4 /* Assets.xcassets */; };
 		4B06DAC91E36D87600E67DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B06DAC71E36D87600E67DD4 /* LaunchScreen.storyboard */; };
 		4B06DAD41E36D87600E67DD4 /* ReativeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAD31E36D87600E67DD4 /* ReativeMusicTests.m */; };
-		4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; };
-		4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE21E36FFB800E67DD4 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAE81E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */; };
 		4B06DAE91E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE51E3700B400E67DD4 /* SpotifyAudioPlayback.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAE61E3700B400E67DD4 /* SpotifyAuthentication.framework */; };
@@ -26,10 +24,6 @@
 		4B06DAF51E3716B000E67DD4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAF41E3716B000E67DD4 /* LoginViewController.m */; };
 		4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFA1E37170100E67DD4 /* PlayViewController.m */; };
 		4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */; };
-		4B06DB001E3796AB00E67DD4 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */; };
-		4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B06DAFF1E3796AB00E67DD4 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4B9156B91E37971500A208C5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; };
-		4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9156B81E37971500A208C5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9156BF1E37E57200A208C5 /* AuthenticationService.m */; };
 		4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701871E38250900DA5C7B /* TrackTableViewCell.m */; };
 		4BD7018C1E38261500DA5C7B /* TrackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackViewModel.m */; };
@@ -37,6 +31,7 @@
 		4BD701991E38505A00DA5C7B /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701981E38505A00DA5C7B /* SearchService.m */; };
 		4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; };
 		4BD701A11E38570200DA5C7B /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD7019F1E38570200DA5C7B /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96EF0DE556882BCE16D43359 /* Pods_ReativeMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +52,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4B06DAED1E3700B400E67DD4 /* SpotifyMetadata.framework in Embed Frameworks */,
-				4B9156BA1E37971500A208C5 /* Result.framework in Embed Frameworks */,
 				4B06DAEB1E3700B400E67DD4 /* SpotifyAuthentication.framework in Embed Frameworks */,
-				4B06DAE41E36FFB800E67DD4 /* ReactiveCocoa.framework in Embed Frameworks */,
 				4BD701A11E38570200DA5C7B /* WebImage.framework in Embed Frameworks */,
 				4B06DAE91E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Embed Frameworks */,
-				4B06DB011E3796AB00E67DD4 /* ReactiveSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +101,9 @@
 		4BD7019A1E38565F00DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		4BD7019C1E3856F000DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		4BD7019F1E38570200DA5C7B /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.release.xcconfig"; sourceTree = "<group>"; };
+		603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReativeMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReativeMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +115,9 @@
 				4B06DAF01E3703F800E67DD4 /* AVFoundation.framework in Frameworks */,
 				4B06DAEC1E3700B400E67DD4 /* SpotifyMetadata.framework in Frameworks */,
 				4BD701A01E38570200DA5C7B /* WebImage.framework in Frameworks */,
-				4B9156B91E37971500A208C5 /* Result.framework in Frameworks */,
-				4B06DB001E3796AB00E67DD4 /* ReactiveSwift.framework in Frameworks */,
 				4B06DAEA1E3700B400E67DD4 /* SpotifyAuthentication.framework in Frameworks */,
-				4B06DAE31E36FFB800E67DD4 /* ReactiveCocoa.framework in Frameworks */,
 				4B06DAE81E3700B400E67DD4 /* SpotifyAudioPlayback.framework in Frameworks */,
+				96EF0DE556882BCE16D43359 /* Pods_ReativeMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +138,7 @@
 				4B06DAD21E36D87600E67DD4 /* ReativeMusicTests */,
 				4B06DAB71E36D87600E67DD4 /* Products */,
 				4B06DAEE1E3703F700E67DD4 /* Frameworks */,
+				8D45A8C6A46A35760A257A73 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +203,7 @@
 				4B06DADE1E36FFAF00E67DD4 /* AFNetworking.framework */,
 				4B06DAF11E37040100E67DD4 /* SystemConfiguration.framework */,
 				4B06DAEF1E3703F800E67DD4 /* AVFoundation.framework */,
+				603FFF27E6788B4A224738B1 /* Pods_ReativeMusic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,6 +266,15 @@
 			name = CocoaExtensions;
 			sourceTree = "<group>";
 		};
+		8D45A8C6A46A35760A257A73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */,
+				535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,10 +282,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B06DAD81E36D87600E67DD4 /* Build configuration list for PBXNativeTarget "ReativeMusic" */;
 			buildPhases = (
+				B0C481D98DF0A1D856190B5A /* [CP] Check Pods Manifest.lock */,
 				4B06DAB21E36D87600E67DD4 /* Sources */,
 				4B06DAB31E36D87600E67DD4 /* Frameworks */,
 				4B06DAB41E36D87600E67DD4 /* Resources */,
 				4B06DAE11E36FFAF00E67DD4 /* Embed Frameworks */,
+				D2C1F87645CD7C9D5328378A /* [CP] Embed Pods Frameworks */,
+				4EC44B243F75AD467AD20519 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +375,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EC44B243F75AD467AD20519 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0C481D98DF0A1D856190B5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2C1F87645CD7C9D5328378A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReativeMusic/Pods-ReativeMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B06DAB21E36D87600E67DD4 /* Sources */ = {
@@ -515,9 +570,9 @@
 		};
 		4B06DAD91E36D87600E67DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAC5901E52ED39C8984D7C3 /* Pods-ReativeMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -533,9 +588,9 @@
 		};
 		4B06DADA1E36D87600E67DD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 535DB096D518B3F0F5ED7D02 /* Pods-ReativeMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
