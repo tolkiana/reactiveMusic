@@ -25,20 +25,24 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self checkAuthenticationStatus];
-    [AuthenticationService subscribeObserverForStartSessionSucces:self andSelector:@selector(sessionStartedNotification:)];
-    [AuthenticationService subscribeObserverForRefreshTokenSucces:self andSelector:@selector(tokenRefreshedNotification:)];
     
     [[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [self presentViewController:[AuthenticationService authenticationController]
                            animated:YES
                          completion:nil];
     }];
+    
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAuthenticationNotificationStartSessionSuccess object:nil]
+     takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
+        [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
+        [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:kAuthenticationNotificationRefreshTokenSuccess object:nil]
+      takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
+        [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
+    }];
 }
-
-- (void)dealloc {
-    [AuthenticationService unsubscribeObserverFromAllNotifications:self];
-}
-
 
 #pragma mark - Authentication methods
 
@@ -56,16 +60,5 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
             break;
     }
 }
-
-#pragma mark - Authentication notifications
-
-- (void)sessionStartedNotification:(NSNotification *)notification {
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)tokenRefreshedNotification:(NSNotification *)notification {
-    [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
-}
-
 
 @end

@@ -15,12 +15,6 @@ static NSString * const kClientID = @"9c2c7d32399747ff9c9c4a7cc5e73a0f";
 static NSString * const kRedirectURL = @"reactive-music://callback";
 static NSString * const kSessionKey = @"ReactiveMusicSession";
 
-static NSString * const kAuthenticationNotificationRefreshTokenSuccess = @"AuthenticationNotificationRefreshTokenSuccess";
-static NSString * const kAuthenticationNotificationStartSessionSuccess = @"AuthenticationNotificationStartSessionSuccess";
-static NSString * const kAuthenticationNotificationRefreshTokenFailure = @"AuthenticationNotificationRefreshTokenFailure";
-static NSString * const kAuthenticationNotificationStartSessionFailure = @"AuthenticationNotificationStartSessionFailure";
-
-
 @implementation AuthenticationService
 
 + (void)configure {
@@ -89,41 +83,5 @@ static NSString * const kAuthenticationNotificationStartSessionFailure = @"Authe
 + (NSString *)accessToken {
     return [[[SPTAuth defaultInstance] session] accessToken];
 }
-
-#pragma mark - Notification methods
-
-+ (void)subscribeObserverForRefreshTokenSucces:(id)observer andSelector:(SEL)aSelector {
-    [[NSNotificationCenter defaultCenter] addObserver:observer
-                                             selector:aSelector
-                                                 name:kAuthenticationNotificationRefreshTokenSuccess
-                                               object:nil];
-}
-
-+ (void)subscribeObserverForRefreshTokenFailure:(id)observer andSelector:(SEL)aSelector {
-    [[NSNotificationCenter defaultCenter] addObserver:observer
-                                             selector:aSelector
-                                                 name:kAuthenticationNotificationRefreshTokenFailure
-                                               object:nil];
-}
-
-+ (void)subscribeObserverForStartSessionSucces:(id)observer andSelector:(SEL)aSelector {
-    [[NSNotificationCenter defaultCenter] addObserver:observer
-                                             selector:aSelector
-                                                 name:kAuthenticationNotificationStartSessionSuccess
-                                               object:nil];
-}
-
-+ (void)subscribeObserverForStartSessionFailure:(id)observer andSelector:(SEL)aSelector {
-    [[NSNotificationCenter defaultCenter] addObserver:observer
-                                             selector:aSelector
-                                                 name:kAuthenticationNotificationStartSessionFailure
-                                               object:nil];
-}
-
-+ (void)unsubscribeObserverFromAllNotifications:(id)observer {
-    [[NSNotificationCenter defaultCenter] removeObserver:observer];
-}
-
-
 
 @end

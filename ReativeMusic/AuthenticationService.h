@@ -16,6 +16,11 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatus) {
     AuthenticationStatusTokenExpired
 };
 
+static NSString * const kAuthenticationNotificationRefreshTokenSuccess = @"AuthenticationNotificationRefreshTokenSuccess";
+static NSString * const kAuthenticationNotificationStartSessionSuccess = @"AuthenticationNotificationStartSessionSuccess";
+static NSString * const kAuthenticationNotificationRefreshTokenFailure = @"AuthenticationNotificationRefreshTokenFailure";
+static NSString * const kAuthenticationNotificationStartSessionFailure = @"AuthenticationNotificationStartSessionFailure";
+
 
 @interface AuthenticationService : NSObject
 
@@ -25,11 +30,5 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatus) {
 + (void)startSessionWithUrl:(NSURL *)url;
 + (void)refreshToken;
 + (NSString *)accessToken;
-
-+ (void)subscribeObserverForRefreshTokenSucces:(id)observer andSelector:(SEL)aSelector;
-+ (void)subscribeObserverForRefreshTokenFailure:(id)observer andSelector:(SEL)aSelector;
-+ (void)subscribeObserverForStartSessionSucces:(id)observer andSelector:(SEL)aSelector;
-+ (void)subscribeObserverForStartSessionFailure:(id)observer andSelector:(SEL)aSelector;
-+ (void)unsubscribeObserverFromAllNotifications:(id)observer;
 
 @end
