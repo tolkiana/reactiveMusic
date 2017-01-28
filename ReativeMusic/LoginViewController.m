@@ -28,6 +28,10 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     [AuthenticationService subscribeObserverForRefreshTokenSucces:self andSelector:@selector(tokenRefreshedNotification:)];
 }
 
+- (void)dealloc {
+    [AuthenticationService unsubscribeObserverFromAllNotifications:self];
+}
+
 #pragma mark - Authentication methods
 
 - (IBAction)login:(id)sender {
