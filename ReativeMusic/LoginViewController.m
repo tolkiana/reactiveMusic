@@ -13,6 +13,8 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 
 @interface LoginViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *signInButton;
+
 @end
 
 @implementation LoginViewController

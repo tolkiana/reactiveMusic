@@ -57,6 +57,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="signInButton" destination="r63-ad-7WQ" id="99s-IV-oKz"/>
                         <segue destination="33q-zd-0cY" kind="presentation" identifier="SegueSearchIdentifier" modalTransitionStyle="flipHorizontal" id="sl6-VB-JSX"/>
                     </connections>
                 </viewController>
