@@ -580,7 +580,10 @@
 				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tolkiana.ReativeMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -598,7 +601,10 @@
 				);
 				INFOPLIST_FILE = ReativeMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tolkiana.ReativeMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
