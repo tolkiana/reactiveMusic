@@ -30,5 +30,6 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatus) {
 + (void)subscribeObserverForRefreshTokenFailure:(id)observer andSelector:(SEL)aSelector;
 + (void)subscribeObserverForStartSessionSucces:(id)observer andSelector:(SEL)aSelector;
 + (void)subscribeObserverForStartSessionFailure:(id)observer andSelector:(SEL)aSelector;
++ (void)unsubscribeObserverFromAllNotifications:(id)observer;
 
 @end

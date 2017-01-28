@@ -35,6 +35,11 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     }];
 }
 
+- (void)dealloc {
+    [AuthenticationService unsubscribeObserverFromAllNotifications:self];
+}
+
+
 #pragma mark - Authentication methods
 
 - (void)checkAuthenticationStatus {

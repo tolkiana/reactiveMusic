@@ -90,6 +90,8 @@ static NSString * const kAuthenticationNotificationStartSessionFailure = @"Authe
     return [[[SPTAuth defaultInstance] session] accessToken];
 }
 
+#pragma mark - Notification methods
+
 + (void)subscribeObserverForRefreshTokenSucces:(id)observer andSelector:(SEL)aSelector {
     [[NSNotificationCenter defaultCenter] addObserver:observer
                                              selector:aSelector
@@ -117,6 +119,11 @@ static NSString * const kAuthenticationNotificationStartSessionFailure = @"Authe
                                                  name:kAuthenticationNotificationStartSessionFailure
                                                object:nil];
 }
+
++ (void)unsubscribeObserverFromAllNotifications:(id)observer {
+    [[NSNotificationCenter defaultCenter] removeObserver:observer];
+}
+
 
 
 @end
