@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AuthenticationService.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 
@@ -26,12 +27,12 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     [self checkAuthenticationStatus];
     [AuthenticationService subscribeObserverForStartSessionSucces:self andSelector:@selector(sessionStartedNotification:)];
     [AuthenticationService subscribeObserverForRefreshTokenSucces:self andSelector:@selector(tokenRefreshedNotification:)];
-}
-
-#pragma mark - Authentication methods
-
-- (IBAction)login:(id)sender {
-    [self openLoginPage];
+    
+    [[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self presentViewController:[AuthenticationService authenticationController]
+                           animated:YES
+                         completion:nil];
+    }];
 }
 
 #pragma mark - Authentication methods
@@ -49,13 +50,6 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
         default:
             break;
     }
-}
-
-
-- (void)openLoginPage {
-    [self presentViewController:[AuthenticationService authenticationController]
-                       animated:YES
-                     completion:nil];
 }
 
 #pragma mark - Authentication notifications
