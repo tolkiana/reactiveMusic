@@ -69,6 +69,8 @@ static NSString * const kPlayImageName = @"play_button";
         [self.player loginWithAccessToken:[AuthenticationService accessToken]];
     }
     else if (self.player.playbackState.isPlaying){
+        self.player.playbackDelegate = self;
+        self.player.diskCache = [[SPTDiskCache alloc] initWithCapacity:1024*1024*64];
         [self startPlayingTrack];
     }
 }
