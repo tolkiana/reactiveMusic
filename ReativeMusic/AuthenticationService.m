@@ -84,4 +84,8 @@ static NSString * const kSessionKey = @"ReactiveMusicSession";
     return [[[SPTAuth defaultInstance] session] accessToken];
 }
 
++ (NSString *)clientID {
+    return kClientID;
+}
+
 @end
