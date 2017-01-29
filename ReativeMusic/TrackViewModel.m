@@ -27,7 +27,7 @@
         _tracKName = partialTrack.name;
         _artistName = artist.name;
         _albumImageURL = partialTrack.album.largestCover.imageURL;
-        _spotifyURI = [NSURL URLWithString:[NSString stringWithFormat:@"spotify:track:%@", partialTrack.identifier]];
+        _spotifyURI = [NSString stringWithFormat:@"spotify:track:%@", partialTrack.identifier];
     }
     return self;
 }

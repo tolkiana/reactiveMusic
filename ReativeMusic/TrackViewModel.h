@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *artistName;
 @property (nonatomic, strong) NSString *tracKName;
 @property (nonatomic, strong) NSURL *albumImageURL;
-@property (nonatomic, strong) NSURL *spotifyURI;
+@property (nonatomic, strong) NSString *spotifyURI;
 
 - (instancetype)initWithTrackName:(NSString *)trackName
                     andArtistName:(NSString *)artistName;
