@@ -37,6 +37,12 @@ static NSString * const kPlayImageName = @"play_button";
     [self setupViews];
 }
 
+#pragma mark - IBActions
+
+- (IBAction)pausePlayButton:(UIButton *)button {
+    button.selected = !button.selected;
+}
+
 #pragma mark - Views Setup
 
 - (void)setupViews {
@@ -47,8 +53,5 @@ static NSString * const kPlayImageName = @"play_button";
     [self.albumImage sd_setImageWithURL:self.trackViewModel.albumImageURL];
 }
 
-- (IBAction)pausePlayButton:(UIButton *)button {
-    button.selected = !button.selected;
-}
 
 @end
