@@ -143,9 +143,12 @@
                                     <constraint firstAttribute="width" secondItem="PHL-kP-YWf" secondAttribute="height" multiplier="24:23" id="j0W-Q9-8Sh"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="uME-KE-Cit"/>
                                 </constraints>
-                                <state key="normal" image="play_button">
+                                <state key="normal" image="pause_button">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pausePlayButton:" destination="KmL-o4-BGO" eventType="touchUpInside" id="vep-Xv-2fe"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aAj-ch-HC1">
                                 <rect key="frame" x="53" y="577" width="269" height="31"/>
@@ -190,6 +193,8 @@
                     <connections>
                         <outlet property="albumImage" destination="6NN-t3-dsA" id="9oe-G4-yOt"/>
                         <outlet property="artistName" destination="5Hg-ma-e83" id="b7n-3K-xOX"/>
+                        <outlet property="playButton" destination="PHL-kP-YWf" id="Qyv-N2-tbr"/>
+                        <outlet property="progessBar" destination="aAj-ch-HC1" id="I6G-F4-AIK"/>
                         <outlet property="trackTitle" destination="sLq-9C-8rG" id="ssY-Mf-qnG"/>
                     </connections>
                 </viewController>
@@ -219,6 +224,6 @@
     </scenes>
     <resources>
         <image name="background" width="281" height="604"/>
-        <image name="play_button" width="512" height="512"/>
+        <image name="pause_button" width="256" height="256"/>
     </resources>
 </document>
