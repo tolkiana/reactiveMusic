@@ -156,10 +156,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-kP-YWf">
-                                <rect key="frame" x="165" y="567" width="45" height="45"/>
+                                <rect key="frame" x="160" y="557" width="55" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="hXX-cM-qc0"/>
-                                    <constraint firstAttribute="width" constant="45" id="iqd-wm-XTV"/>
+                                    <constraint firstAttribute="height" constant="55" id="hXX-cM-qc0"/>
+                                    <constraint firstAttribute="width" constant="55" id="iqd-wm-XTV"/>
                                     <constraint firstAttribute="width" secondItem="PHL-kP-YWf" secondAttribute="height" multiplier="1:1" id="wsB-RE-Hsw"/>
                                 </constraints>
                                 <state key="normal" image="pause_button">
