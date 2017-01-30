@@ -77,16 +77,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-VW-MSb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e62-Uw-E5R">
-                                <rect key="frame" x="163" y="319" width="50" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signIn:" destination="aCn-2h-SG0" eventType="touchUpInside" id="LCo-7M-YVM"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-z4-qEB">
+                                <rect key="frame" x="148.5" y="319" width="78" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e62-Uw-E5R">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signIn:" destination="aCn-2h-SG0" eventType="touchUpInside" id="LCo-7M-YVM"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-M5-USE">
+                                        <rect key="frame" x="58" y="0.0" width="20" height="30"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reactive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-tT-UVD">
                                 <rect key="frame" x="96" y="40" width="183" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
@@ -117,7 +125,7 @@
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry! Incorrect credentials ☹️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoQ-aV-yBs">
-                                <rect key="frame" x="70.5" y="251.5" width="235.5" height="20.5"/>
+                                <rect key="frame" x="70" y="251.5" width="235.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -125,8 +133,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e62-Uw-E5R" firstAttribute="centerY" secondItem="roW-6M-8Nr" secondAttribute="centerY" id="13r-td-Ioh"/>
-                            <constraint firstItem="e62-Uw-E5R" firstAttribute="centerX" secondItem="roW-6M-8Nr" secondAttribute="centerX" id="FVa-qv-iuY"/>
+                            <constraint firstItem="CcI-z4-qEB" firstAttribute="centerY" secondItem="roW-6M-8Nr" secondAttribute="centerY" id="FrQ-d9-j2B"/>
                             <constraint firstAttribute="trailing" secondItem="ZcT-VW-MSb" secondAttribute="trailing" id="QQk-vu-aaz"/>
                             <constraint firstItem="XoQ-aV-yBs" firstAttribute="top" secondItem="rkZ-sG-b0T" secondAttribute="bottom" constant="8" id="UEk-RQ-P9g"/>
                             <constraint firstItem="ZcT-VW-MSb" firstAttribute="top" secondItem="roW-6M-8Nr" secondAttribute="top" id="XB2-MG-3cF"/>
@@ -136,10 +143,13 @@
                             <constraint firstItem="ZcT-VW-MSb" firstAttribute="leading" secondItem="roW-6M-8Nr" secondAttribute="leading" id="mHA-AW-32Q"/>
                             <constraint firstItem="rkZ-sG-b0T" firstAttribute="centerX" secondItem="roW-6M-8Nr" secondAttribute="centerX" id="su6-hS-wpy"/>
                             <constraint firstItem="rkZ-sG-b0T" firstAttribute="top" secondItem="rAy-tT-UVD" secondAttribute="bottom" constant="80" id="uMq-sW-so8"/>
+                            <constraint firstItem="CcI-z4-qEB" firstAttribute="top" secondItem="XoQ-aV-yBs" secondAttribute="bottom" constant="46" id="x6K-7y-FeC"/>
                             <constraint firstItem="rAy-tT-UVD" firstAttribute="centerX" secondItem="roW-6M-8Nr" secondAttribute="centerX" id="yX3-68-gzH"/>
+                            <constraint firstItem="CcI-z4-qEB" firstAttribute="centerX" secondItem="roW-6M-8Nr" secondAttribute="centerX" id="zUm-qW-DUM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ljg-M5-USE" id="Nkn-QV-aGK"/>
                         <outlet property="failureLabel" destination="XoQ-aV-yBs" id="zRF-LK-u3V"/>
                         <outlet property="passwordTextField" destination="eJM-9W-bzF" id="oEf-j8-S85"/>
                         <outlet property="signInButton" destination="e62-Uw-E5R" id="F32-xY-dvh"/>

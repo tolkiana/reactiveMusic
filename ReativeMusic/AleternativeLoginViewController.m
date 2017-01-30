@@ -17,6 +17,7 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) IBOutlet UILabel *failureLabel;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic) BOOL passwordIsValid;
 @property (nonatomic) BOOL usernameIsValid;
@@ -30,6 +31,8 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.activityIndicator.hidden = YES;
+    self.failureLabel.hidden = YES;
 
     // handle text changes for both text fields
     [self.userTextField addTarget:self action:@selector(usernameTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
@@ -42,12 +45,16 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     // disable all UI controls
     self.signInButton.enabled = NO;
     self.failureLabel.hidden = YES;
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
     
     [AuthenticationService signInWithUsername:self.userTextField.text
                                      password:self.passwordTextField.text
                                    completion:^(BOOL success) {
                                        self.signInButton.enabled = YES;
                                        self.failureLabel.hidden = success;
+                                       self.activityIndicator.hidden = YES;
+                                       [self.activityIndicator stopAnimating];
                                        if (success) {
                                            [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
                                        }
