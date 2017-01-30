@@ -25,6 +25,7 @@
 		4B06DAFB1E37170100E67DD4 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFA1E37170100E67DD4 /* PlayViewController.m */; };
 		4B06DAFE1E37174C00E67DD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */; };
 		4B9156C01E37E57200A208C5 /* AuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9156BF1E37E57200A208C5 /* AuthenticationService.m */; };
+		4BA1E2801E3EC3D3002BF1D9 /* AleternativeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1E27F1E3EC3D3002BF1D9 /* AleternativeLoginViewController.m */; };
 		4BD701881E38250900DA5C7B /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701871E38250900DA5C7B /* TrackTableViewCell.m */; };
 		4BD7018C1E38261500DA5C7B /* TrackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7018B1E38261500DA5C7B /* TrackViewModel.m */; };
 		4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD701921E383EA600DA5C7B /* UIColor+Utilities.m */; };
@@ -92,6 +93,8 @@
 		4B9156B81E37971500A208C5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		4B9156BE1E37E57200A208C5 /* AuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationService.h; sourceTree = "<group>"; };
 		4B9156BF1E37E57200A208C5 /* AuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationService.m; sourceTree = "<group>"; };
+		4BA1E27E1E3EC3D3002BF1D9 /* AleternativeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AleternativeLoginViewController.h; sourceTree = "<group>"; };
+		4BA1E27F1E3EC3D3002BF1D9 /* AleternativeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AleternativeLoginViewController.m; sourceTree = "<group>"; };
 		4BD701861E38250900DA5C7B /* TrackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackTableViewCell.h; sourceTree = "<group>"; };
 		4BD701871E38250900DA5C7B /* TrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackTableViewCell.m; sourceTree = "<group>"; };
 		4BD7018A1E38261500DA5C7B /* TrackViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewModel.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				4B06DAFA1E37170100E67DD4 /* PlayViewController.m */,
 				4B06DAFC1E37174C00E67DD4 /* SearchViewController.h */,
 				4B06DAFD1E37174C00E67DD4 /* SearchViewController.m */,
+				4BA1E27E1E3EC3D3002BF1D9 /* AleternativeLoginViewController.h */,
+				4BA1E27F1E3EC3D3002BF1D9 /* AleternativeLoginViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				4BD701991E38505A00DA5C7B /* SearchService.m in Sources */,
 				4B06DABB1E36D87600E67DD4 /* main.m in Sources */,
 				4BD701931E383EA600DA5C7B /* UIColor+Utilities.m in Sources */,
+				4BA1E2801E3EC3D3002BF1D9 /* AleternativeLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
