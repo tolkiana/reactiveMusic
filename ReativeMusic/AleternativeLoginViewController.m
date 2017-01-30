@@ -7,6 +7,9 @@
 //
 
 #import "AleternativeLoginViewController.h"
+#import "AuthenticationService.h"
+
+static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 
 @interface AleternativeLoginViewController ()
 
@@ -15,8 +18,67 @@
 @property (strong, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) IBOutlet UILabel *failureLabel;
 
+@property (nonatomic) BOOL passwordIsValid;
+@property (nonatomic) BOOL usernameIsValid;
+
+
 @end
 
 @implementation AleternativeLoginViewController
+
+#pragma mark - Life cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // handle text changes for both text fields
+    [self.userTextField addTarget:self action:@selector(usernameTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordTextField addTarget:self action:@selector(passwordTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)signIn:(id)sender {
+    // disable all UI controls
+    self.signInButton.enabled = NO;
+    self.failureLabel.hidden = YES;
+    
+    [AuthenticationService signInWithUsername:self.userTextField.text
+                                     password:self.passwordTextField.text
+                                   completion:^(BOOL success) {
+                                       self.signInButton.enabled = YES;
+                                       self.failureLabel.hidden = success;
+                                       if (success) {
+                                           [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
+                                       }
+    }];
+}
+
+
+#pragma mark - Validation methods
+
+- (BOOL)isValidUsername:(NSString *)username {
+    return username.length > 3;
+}
+
+- (BOOL)isValidPassword:(NSString *)password {
+    return password.length > 3;
+}
+
+- (void)updateUIState {
+    self.userTextField.backgroundColor = self.usernameIsValid ? [UIColor whiteColor] : [UIColor lightGrayColor];
+    self.passwordTextField.backgroundColor = self.passwordIsValid ? [UIColor whiteColor] : [UIColor lightGrayColor];
+    self.signInButton.enabled = self.usernameIsValid && self.passwordIsValid;
+}
+
+- (void)usernameTextFieldChanged {
+    self.usernameIsValid = [self isValidUsername:self.userTextField.text];
+    [self updateUIState];
+}
+
+- (void)passwordTextFieldChanged {
+    self.passwordIsValid = [self isValidPassword:self.passwordTextField.text];
+    [self updateUIState];
+}
 
 @end
