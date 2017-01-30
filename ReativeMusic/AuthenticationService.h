@@ -31,5 +31,8 @@ static NSString * const kAuthenticationNotificationStartSessionFailure = @"Authe
 + (void)refreshToken;
 + (NSString *)accessToken;
 + (NSString *)clientID;
++ (void)signInWithUsername:(NSString *)username
+                  password:(NSString *)password
+                completion:(void (^)(BOOL))block;
 
 @end
