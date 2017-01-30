@@ -8,6 +8,7 @@
 
 #import "AleternativeLoginViewController.h"
 #import "AuthenticationService.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
 
@@ -33,31 +34,50 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     [super viewDidLoad];
     self.activityIndicator.hidden = YES;
     self.failureLabel.hidden = YES;
-
-    // handle text changes for both text fields
-    [self.userTextField addTarget:self action:@selector(usernameTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
-    [self.passwordTextField addTarget:self action:@selector(passwordTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
-}
-
-#pragma mark - IBActions
-
-- (IBAction)signIn:(id)sender {
-    // disable all UI controls
-    self.signInButton.enabled = NO;
-    self.failureLabel.hidden = YES;
-    self.activityIndicator.hidden = NO;
-    [self.activityIndicator startAnimating];
     
-    [AuthenticationService signInWithUsername:self.userTextField.text
-                                     password:self.passwordTextField.text
-                                   completion:^(BOOL success) {
-                                       self.signInButton.enabled = YES;
-                                       self.failureLabel.hidden = success;
-                                       self.activityIndicator.hidden = YES;
-                                       [self.activityIndicator stopAnimating];
-                                       if (success) {
-                                           [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
-                                       }
+    RACSignal *validUsernameSignal = [self.userTextField.rac_textSignal map:^id(NSString *text) {
+        return @([self isValidUsername:text]);
+     }];
+    
+    RACSignal *validPasswordSignal = [self.passwordTextField.rac_textSignal map:^id(NSString *text) {
+         return @([self isValidPassword:text]);
+     }];
+    
+    RAC(self.passwordTextField, backgroundColor) = [validPasswordSignal map:^id(NSNumber *passwordValid) {
+         return [passwordValid boolValue] ? [UIColor whiteColor] : [UIColor lightGrayColor];
+    }];
+    
+    RAC(self.userTextField, backgroundColor) = [validUsernameSignal map:^id(NSNumber *passwordValid) {
+         return [passwordValid boolValue] ? [UIColor whiteColor] : [UIColor lightGrayColor];
+    }];
+    
+    
+    RACSignal *signUpActiveSignal = [RACSignal combineLatest:@[validUsernameSignal, validPasswordSignal]
+                                                      reduce:^id(NSNumber *usernameValid, NSNumber *passwordValid) {
+                                                          return @([usernameValid boolValue] && [passwordValid boolValue]);
+    }];
+    
+    [signUpActiveSignal subscribeNext:^(NSNumber *signupActive) {
+        self.signInButton.enabled = [signupActive boolValue];
+    }];
+    
+    [[[[self.signInButton rac_signalForControlEvents:UIControlEventTouchUpInside] doNext:^(id x) {
+        self.signInButton.enabled = NO;
+        self.failureLabel.hidden = YES;
+        self.activityIndicator.hidden = NO;
+        [self.activityIndicator startAnimating];
+        
+    }] flattenMap:^id(id x) {
+        return [self signInSignal];
+    }] subscribeNext:^(NSNumber *signedIn) {
+        BOOL success = [signedIn boolValue];
+        self.signInButton.enabled = YES;
+        self.failureLabel.hidden = success;
+        self.activityIndicator.hidden = YES;
+        [self.activityIndicator stopAnimating];
+        if (success) {
+            [self performSegueWithIdentifier:kSegueSearchIdentifier sender:self];
+        }
     }];
 }
 
@@ -72,20 +92,20 @@ static NSString * const kSegueSearchIdentifier = @"SegueSearchIdentifier";
     return password.length > 3;
 }
 
-- (void)updateUIState {
-    self.userTextField.backgroundColor = self.usernameIsValid ? [UIColor whiteColor] : [UIColor lightGrayColor];
-    self.passwordTextField.backgroundColor = self.passwordIsValid ? [UIColor whiteColor] : [UIColor lightGrayColor];
-    self.signInButton.enabled = self.usernameIsValid && self.passwordIsValid;
+#pragma mark - Sugnals
+
+-(RACSignal *)signInSignal {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [AuthenticationService signInWithUsername:self.userTextField.text
+                                         password:self.passwordTextField.text
+                                       completion:^(BOOL success) {
+                                           [subscriber sendNext:@(success)];
+                                           [subscriber sendCompleted];
+                                       }];
+        return nil;
+    }];
 }
 
-- (void)usernameTextFieldChanged {
-    self.usernameIsValid = [self isValidUsername:self.userTextField.text];
-    [self updateUIState];
-}
 
-- (void)passwordTextFieldChanged {
-    self.passwordIsValid = [self isValidPassword:self.passwordTextField.text];
-    [self updateUIState];
-}
 
 @end

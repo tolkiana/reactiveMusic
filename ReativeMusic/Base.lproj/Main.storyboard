@@ -86,9 +86,6 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="signIn:" destination="aCn-2h-SG0" eventType="touchUpInside" id="LCo-7M-YVM"/>
-                                        </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-M5-USE">
                                         <rect key="frame" x="58" y="0.0" width="20" height="30"/>
